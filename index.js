@@ -13,6 +13,7 @@ searchBtn.addEventListener("click", function(){
             `
             return
         }
+        
         let summaryHTML = ""
         let searchList = data.Search.map(movie => movie.Title)
         for (let i = 0; i < searchList.length; i++) {
@@ -25,13 +26,13 @@ searchBtn.addEventListener("click", function(){
                                 <div class="movie-info-container">
                                     <div class="first-row">
                                         <h2 class="title">${data.Title}</h2>
-                                        <img src="./images/Star.png" class="star" />
+                                        <img src="./img/Star.png" class="star" />
                                         <p class="rating">${data.imdbRating}</p>
                                     </div>
                                     <div class="second-row">
                                         <p class="time">${data.Runtime}</p>
                                         <p class="genre">${data.Genre}</p>
-                                        <img src="./images/Add.png" class="add-btn" onclick="add('${data.Title}')" />
+                                        <img src="./img/Add.png" class="add-btn" onclick="add('${data.Title}')" />
                                         <p class="watchlist-btn">Watchlist<p>
                                     </div>
                                     <p class="description">${data.Plot}</p>

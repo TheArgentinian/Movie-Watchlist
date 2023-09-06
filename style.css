@@ -1,3 +1,41 @@
+body{
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
 header{
     background-image: url(img/header-img.png);
+    background-size: cover;
+    background-position: center;
+    background-color: #;
+    height: 30vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+h1{
+    margin: 0;
+}
+
+.search-section {
+    display: flex;
+}
+
+#search-box{
+    background-image: url(img/Search-Icon.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 15px;
+    text-align: center;
+    display: flex;
+    padding: 9px 13px;
+    
+}
+
+#search-btn{
+    padding: 9px 15px;
 }
