@@ -1,6 +1,7 @@
 const searchBox = document.getElementById("search-box")
-const searchBtn = document.getElementById("search")
+const searchBtn = document.getElementById("search-btn")
 const mainPostEl = document.getElementById("main")
+let watchlistArr = []
 
 
 searchBtn.addEventListener("click", function(){
@@ -44,3 +45,12 @@ searchBtn.addEventListener("click", function(){
         }
     })
 })
+
+function add(title) {
+    fetch(`https://www.omdbapi.com/?t=${title}&apikey=cf0fdf8`)
+        .then(res => res.json())
+        .then(data => {
+            window.localStorage.setItem(data.Title, JSON.stringify(data))
+            watchlistArr.push(data.Title)
+        })
+}
