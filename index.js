@@ -1,5 +1,5 @@
 const searchBox = document.getElementById("search-box")
-const searchBtn = document.getElementById("search")
+const searchBtn = document.getElementById("search-btn")
 const mainPostEl = document.getElementById("main")
 
 
