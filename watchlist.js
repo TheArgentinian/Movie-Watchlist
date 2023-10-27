@@ -1,7 +1,50 @@
 const watchlistEl = document.getElementById("watchlist")
+let summaryHTML = ""
 
 function renderWatchlist() {
-    const watchlistItems = JSON.parse(localStorage.getItem("watchlist")) || []
+    let pelis = []
+    let keys = Object.keys(localStorage)
+    let i = keys.length
+    
+    while (i--) {
+        pelis.push(JSON.parse(localStorage.getItem(keys[i])))
+    }
+
+    for (let i = 0; i < pelis.length; i++) {
+        let movie = pelis[i]
+        summaryHTML += `
+            <div id="recommendations" class="recommendations">
+                <img src="${movie.Poster}" class="poster" />
+                <div class="movie-info-container">
+                    <div class="first-row">
+                        <h2 class="title">${movie.Title}</h2>
+                        <img src="./img/Star.png" class="star" />
+                        <p class="rating">${movie.imdbRating}</p>
+                    </div>
+                    <div class="second-row">
+                        <p class="time">${movie.Runtime}</p>
+                        <p class="genre">${movie.Genre}</p>
+                        <img src="./img/Remove.png" class="add-btn" onclick="remove('${movie.Title}')" />
+                        <p class="watchlist-btn">Remove<p>
+                    </div>
+                    <p class="description">${movie.Plot}</p>
+                </div>
+            </div>
+        `
+   watchlistEl.innerHTML = summaryHTML
+}
+}
+renderWatchlist()
+
+function remove(title){
+    localStorage.removeItem(title)
+    location.reload()
+}
+
+
+  /*   const watchlistItems = (JSON.parse(localStorage.getItem(data.Title))) => console.log("retrieved")
+} */
+   /*  const watchlistItems = JSON.parse(localStorage.getItem("watchlist")) || []
       console.log(watchlistItems)
     if (watchlistItems.length === 0) {
         return watchlistEl.innerHTML = "Your watchlist is empty."  
@@ -47,5 +90,5 @@ function renderWatchlist() {
 
     })
     }
-}
+} */
 
