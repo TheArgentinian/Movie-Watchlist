@@ -43,7 +43,7 @@ searchBtn.addEventListener("click", function(e) {
                                     <div class="second-row">
                                         <p class="time">${data.Runtime}</p>
                                         <p class="genre">${data.Genre}</p>
-                                        <img src="./img/Add.png" id="add-btn" onclick='addMovieToWatchlist("${data.title}")'/>
+                                        <img src="./img/Add.png" id="add-btn" onclick='addMovieToWatchlist("${data.imdbID}")'/>
                                         <p class="watchlist-btn">Add to watchlist<p>
                                     </div>
                                     <p class="description">${data.Plot}</p>
