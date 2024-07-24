@@ -13,11 +13,12 @@ function addMovieToWatchlist(title) {
 }
 
 
-searchBtn.addEventListener("click", function(e) {
+searchBtn.addEventListener("click", (e) => {
     e.preventDefault()
     fetch(`http://www.omdbapi.com/?apikey=7006be1d&"&s=${searchBox.value}`)
     .then (res => res.json())
     .then (data => {
+        console.log(data)
         if (data.Response === "False") {
             summary.innerHTML = `
                 <p class="no-results">Unable to find what you're looking for. Please try another search.</p>
@@ -27,6 +28,7 @@ searchBtn.addEventListener("click", function(e) {
         
         let summaryHTML = ""
         let searchList = data.Search.map(movie => movie.Title)
+        console.log(searchList)
         for (let i = 0; i < searchList.length; i++) {
             fetch(`https://www.omdbapi.com/?t=${searchList[i]}&apikey=7006be1d`)
                 .then(res => res.json())

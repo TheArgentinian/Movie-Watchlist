@@ -22,17 +22,19 @@ h1{
 
 .search-section {
     display: flex;
+    position: relative;
+    bottom: 20px;
+    justify-content: center;
 }
 
 #search-box{
-    background-image: url(img/Search-Icon.png);
-    background-repeat: no-repeat;
-    background-position: left;
+    background: url(img/Search-Icon.png) white 10px no-repeat;
     background-size: 15px;
-    text-align: center;
-    display: flex;
-    padding: 9px 13px;
-    
+    width: 200px;
+    padding: 1em 2.5em;
+    border-radius: 8px;
+    border: 1px grey solid;
+    font-size: 14px;
 }
 
 #search-btn{
