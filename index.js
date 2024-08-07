@@ -1,5 +1,4 @@
 const searchBox = document.getElementById("search-box")
-const searchBtn = document.getElementById("search-btn")
 const mainPostEl = document.getElementById("main")
 const addMovie = document.getElementById("add-btn")
 const watchlistPage = document.getElementById("watchlist")
@@ -12,10 +11,8 @@ function addMovieToWatchlist(title) {
     .then (data => localStorage.setItem(data.Title, JSON.stringify(data)))
 }
 
-
-searchBtn.addEventListener("click", (e) => {
-    e.preventDefault()
-    fetch(`http://www.omdbapi.com/?apikey=7006be1d&"&s=${searchBox.value}`)
+function searchMovie(){
+     fetch(`http://www.omdbapi.com/?apikey=7006be1d&"&s=${searchBox.value}`)
     .then (res => res.json())
     .then (data => {
         console.log(data)
@@ -56,9 +53,14 @@ searchBtn.addEventListener("click", (e) => {
                     })
         }
     })
-})
+}
 
-
+searchBox.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // prevent default behavior
+      searchMovie(); 
+    }
+  });
 
 /* function displayAddedMovie (){
     let moviesOnWatchlist = JSON.parse(localStorage.getItem("watchlist"))
