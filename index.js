@@ -31,7 +31,7 @@ function searchMovie(){
                 .then(res => res.json())
                 .then(data => {
                     summaryHTML += `
-                            <div id="recommendations" class="recommendations">
+                            <div id="search-result" class="search-result">
                                 <img src="${data.Poster}" class="poster" />
                                 <div class="movie-info-container">
                                     <div class="first-row">
@@ -66,7 +66,7 @@ searchBox.addEventListener('keydown', (event) => {
     let moviesOnWatchlist = JSON.parse(localStorage.getItem("watchlist"))
     
     moviesOnWatchlist.forEach(data => {summaryHTML += `
-    <div id="recommendations" class="recommendations">
+    <div id="result" class="result">
         <img src="${data.Poster}" class="poster" />
         <div class="movie-info-container">
             <div class="first-row">
@@ -94,7 +94,7 @@ watchlistPage.innerHTML = summaryHTML
 /* for (let i = 0; i < watchlistPicks.length; i++) {
     let movie = watchlistPicks[i]
     summaryHTML += `
-        <div id="recommendations" class="recommendations">
+        <div id="result" class="result">
             <img src="${movie.Poster}" class="poster" />
             <div class="movie-info-container">
                 <div class="first-row">

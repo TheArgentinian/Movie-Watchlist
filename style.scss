@@ -37,10 +37,10 @@ p {
 #search-box{
     background: url(img/Search-Icon.png) white 10px no-repeat;
     background-size: 15px;
-    width: 200px;
+    width: 35%;
     padding: 1em 2.5em;
-    border-radius: 8px;
-    border: 1px grey solid;
+    border-radius: 6px 0 0 6px;
+    border: 1px #D1D5DB solid;
     font-size: 14px;
     font-family: inherit
 }
@@ -48,7 +48,10 @@ p {
 #search-btn{
     padding: 9px 15px;
     font-family: inherit;
-    border: none;
+    font-weight: 500;
+    border: 1px #D1D5DB solid;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
 }
 
 a{
@@ -80,4 +83,14 @@ main {
     color: #DFDDDD;
 
 }
+}
+
+// Search results css //
+
+.search-result {
+    display: flex;
+}
+
+.star {
+    size: 2px;
 }
