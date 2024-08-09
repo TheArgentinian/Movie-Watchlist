@@ -33,7 +33,7 @@ function searchMovie(){
                     summaryHTML += `
                             <div id="search-result" class="search-result">
                                 <img src="${data.Poster}" class="poster" />
-                                <div class="movie-info-container">
+                                <div class="movie-info">
                                     <div class="first-row">
                                         <h2 class="title">${data.Title}</h2>
                                         <img src="./img/Star.png" class="star" />
